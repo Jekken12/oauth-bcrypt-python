@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Iniciar sesión{% endblock %}
+{% block content %}
+  <form method="post" class="form">
+    <label>
+      Correo electrónico
+      <input type="email" name="email" placeholder="usuario@correo.com" required>
+    </label>
+
+    <label>
+      Contraseña
+      <input type="password" name="password" placeholder="********" required>
+    </label>
+
+    <button class="primary" type="submit">Iniciar sesión</button>
+  </form>
+
+  <div class="separator"><span>o</span></div>
+
+  <a class="google" href="{{ url_for('login_google') }}">Continuar con Google</a>
+
+  <p class="foot">
+    ¿No tienes cuenta?
+    <a href="{{ url_for('register') }}">Registrarse</a>
+  </p>
+{% endblock %}

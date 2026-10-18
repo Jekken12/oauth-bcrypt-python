@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+  <div class="success-box">
+    <div class="check">✓</div>
+    <h2>Inicio de sesión correcto</h2>
+    <p>La autenticación se completó correctamente.</p>
+  </div>
+
+  <div class="profile">
+    <div>
+      <span>Usuario</span>
+      <strong>{{ name }}</strong>
+    </div>
+    <div>
+      <span>Correo</span>
+      <strong>{{ email }}</strong>
+    </div>
+    <div>
+      <span>Método de autenticación</span>
+      <strong>{{ auth_method }}</strong>
+    </div>
+  </div>
+
+  <a class="logout" href="{{ url_for('logout') }}">Cerrar sesión</a>
+{% endblock %}
